@@ -14,6 +14,8 @@ public class Order
 
     public CustomerId CustomerId { get; private set; }
 
+    public IReadOnlyList<LineItem> LineItems => _lineItems.ToList();
+
     public static Order Create(CustomerId customerId)
     {
         var order = new Order
